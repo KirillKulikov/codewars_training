@@ -8,8 +8,6 @@
 const userSumArray_1 = [17, 33, 1, 2]
 const userSumArray_2 = [78, 56, 23, 12, 8]
 
-let sumArray = 0;
-
 function arrayPlusArray(array1, array2) {
     let sum1 = 0;
     let sum2 = 0;
