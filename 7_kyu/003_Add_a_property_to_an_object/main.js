@@ -4,3 +4,19 @@
 // ❗ Напишите функцию, которая добавляет именованное свойство в объект. Должно быть возможно присвоить свойству новое значение. Если свойство уже существует в объекте, должна быть выдана ошибка.
 
 // ❗ для решения этой задачи потребуется познакомиться с оператором throw. Он используется для генерации ошибок (исключений, exceptions). Понадобится подобная конструкция: throw new Error('Error message').
+
+const userObject = {
+
+};
+
+function addProperty(obj, key, value) {
+    if (obj.hasOwnProperty(key)) {
+        throw new Error(`Свойство "${key}" уже существует в объекте.`);
+    }
+    obj[key] = value;
+}
+
+addProperty(userObject, "model", "Almera");
+addProperty(userObject, "mileage", 150000);
+// addProperty(userObject, "model", "Almera");
+console.log(userObject);

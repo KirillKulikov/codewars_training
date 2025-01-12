@@ -32,3 +32,18 @@ var questions = [{
 
 // ❗ Ваша задача — добавить новое свойство usersAnswer к каждому объекту в массиве questions. Значение usersAnswer должно быть равно null. Решение должно работать для массивов любой длины.
 // Массив questions уже определен для вас и не совпадает с тем, что в примере.
+const questions = [{
+    question: "What's the currency of the USA?",
+    choices: ["US dollar", "Ruble", "Horses", "Gold"],
+    corAnswer: 0
+}, {
+    question: "Where was the American Declaration of Independence signed?",
+    choices: ["Philadelphia", "At the bottom", "Frankie's Pub", "China"],
+    corAnswer: 0
+}];
+
+for (let index = 0; index < questions.length; index++) {
+    let newKey = questions[index];
+    newKey.usersAnswer = null;
+  }
+  console.log(questions);
