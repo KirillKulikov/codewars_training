@@ -14,3 +14,19 @@ Examples:
 
 // Если длина строки нечётная, верните средний символ.
 // Если длина строки чётная, верните два средних символа.
+
+const strVar = 'middlezsdgz;ljczxkx[p';
+
+
+function chapterForStr(str) {
+    let newStr = '';
+    if ((str.length % 2) === 0) {
+        newStr = str[str.length / 2 - 1] + str[str.length / 2]
+        console.log('chetnoe')
+    } else {
+        newStr = str[(str.length + 1) / 2 - 1]
+        console.log('nechetnoe')
+    }
+    return newStr;
+}
+console.log(chapterForStr(strVar));

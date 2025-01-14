@@ -40,9 +40,7 @@
 // Finally, if you have no friends in your chat application, the input will be an empty array []. In this case you should return an empty object {} (empty Dictionary in C#).
 
 // ❗ У вас есть приложение для группового чата, но кто находится онлайн!?
-
 // Вы хотите показать своим пользователям, кто из их друзей онлайн и доступен для общения!
-
 // Учитывая ввод массива объектов, содержащих имена пользователей, статус и время с момента последнего действия (в минутах), создайте функцию, которая определит, кто является online, offline и away.
 
 // Если кто-то есть, online но их lastActivity было больше 10 минут назад, они должны быть рассмотрены away.
@@ -79,3 +77,45 @@
 
 // Наконец, если в вашем чате нет друзей, вводом будет пустой массив []. В этом случае вы должны вернуть пустой объект {} (пустой словарь в C#)..
 
+const userChat = [{
+  username: 'David',
+  status: 'online',
+  lastActivity: 10
+}, {
+  username: 'Lucy', 
+  status: 'offline',
+  lastActivity: 22
+}, {
+  username: 'Bob', 
+  status: 'online',
+  lastActivity: 104
+}];
+
+const whosOnline = (friends) => {
+  const status = {
+    online: [],
+    offline: [],
+    away: []
+  }
+
+  for(const friend of friends) {
+    if(friend.status === 'offline') {
+      status.offline.push(friend.username)
+    }
+    else {
+      if(friend.lastActivity > 10 && friend.status === 'online') {
+        status.away.push(friend.username)
+      } else {
+        status.online.push(friend.username)
+      } 
+    }
+  }
+  for(const guests in status) {
+    if(status[guests].length === 0) {
+      delete status[guests];
+    }
+  }
+  return status;
+}
+
+console.log(aWhoOnline(userChat))
