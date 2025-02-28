@@ -12,3 +12,39 @@ Examples:
 // Вам нужно привести весь массив к правильному типу.
 // Создайте функцию, которая принимает в качестве параметра последовательность чисел, представленных в виде строк, и выводит последовательность чисел.
 // Обратите внимание, что вы также можете получать значения с плавающей запятой.
+
+const userDataString = ["3", "7", "25"]
+
+
+function convertArrayStrToNum(array) {
+    const userDataNumber = []
+    for (let index = 0; index < array.length; index++) {
+        let element = Number(array[index]);
+        userDataNumber.push(element)
+    }
+    return userDataNumber;
+}
+
+console.log(convertArrayStrToNum(userDataString))
+
+/*
+* Решения задачи
+* №1
+function toNumberArray(str){
+  let arr = [];
+  for(let i = 0; i < str.length; i++){
+    arr.push(+str[i]);
+  }
+  return arr;
+}
+
+* №2
+function toNumberArray(stringarray){
+  let arr = [];
+  for (let i = 0; i < stringarray.length; i++) {
+    arr.push(Number(stringarray[i]));
+  }
+  return arr;
+}
+
+*/
